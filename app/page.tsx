@@ -6,7 +6,6 @@ import GradualSpacing from "@/components/ui/gradual-spacing";
 import { motion } from "framer-motion";
 import Image from "next/image";
 
-
 export default function Home() {
   return (
     <AuroraBackground className="h-[100%]">

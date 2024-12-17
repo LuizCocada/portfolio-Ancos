@@ -1,61 +1,67 @@
 'use client';
 
-import { AuroraBackground } from "@/components/ui/aurora-background"
-import { ContainerScroll } from "@/components/ui/container-scroll-animation";
 import GradualSpacing from "@/components/ui/gradual-spacing";
-import { motion } from "framer-motion";
-import Image from "next/image";
+import HyperText from "@/components/ui/hyper-text";
+import Iphone15Pro from "@/components/ui/iphone-15-pro";
+import Safari from "@/components/ui/safari";
+import ShimmerButton from "@/components/ui/shimmer-button";
+import { AnimatePresence, motion } from "framer-motion";
+import Link from "next/link";
 
 export default function Home() {
+
+  const messageWhatsApp = `Olá, Gostaria de saber mais sobre o serviço de agendamentos para salões e barbearias.`;
+
   return (
-    <AuroraBackground className="h-[100%]">
+    <AnimatePresence mode="sync">
       <motion.div
-        initial={{ opacity: 0.0, y: 40 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{
-          delay: 0.3,
-          duration: 0.8,
-          ease: "easeInOut",
-        }}
-        className="relative flex flex-col gap-4 items-center justify-center px-4"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 1.5 }}
+        className=""
       >
-        <GradualSpacing
-          className="text-3xl md:text-7xl font-bold dark:text-white text-center mt-40"
-          text="O site que sua barbearia precisa!"
-        />
-        <GradualSpacing
-          className="font-extralight text-base md:text-4xl dark:text-neutral-200 py-4"
-          text="torne a gestão do seu negócio fácil e eficiente."
-        />
+        <div className="flex flex-col justify-center items-center mb-20">
 
-        <button className="bg-black dark:bg-white rounded-full w-fit text-white dark:text-black px-4 py-2">
-          Saiba mais
-        </button>
+          <GradualSpacing text="Transforme seu negocio." className="text-2xl font-bold pt-32 sm:text-4xl md:text-6xl lg:text-7xl xl:text-8xl " />
+          <GradualSpacing text="Seu sistema sob medida." className="py-6 text-xl sm:text-2xl md:text-4xl xl:text-6xl" />
 
-        <div className="flex flex-col overflow-hidden">
-          <ContainerScroll
-            titleComponent={
-              <>
-                <h1 className="text-4xl font-semibold text-black dark:text-white">
-                  Seu cliente feliz com um sistema simples e funcional. <br />
-                  <span className="text-4xl md:text-[6rem] font-bold mt-1 leading-none">
-                    Transforme seu espaço
-                  </span>
-                </h1>
-              </>
-            }
-          >
-            <Image
-              src={`/scroolPad.png`}
-              alt="hero"
-              height={720}
-              width={1400}
-              className="mx-auto rounded-2xl object-cover h-full object-left-top"
-              draggable={false}
-            />
-          </ContainerScroll>
+          <div className="pt-20">
+            <Link
+              href={`https://wa.me/5585999295393?text=${encodeURIComponent(messageWhatsApp)}`}
+              target="_blank"
+            >
+              <ShimmerButton>
+                Saiba mais.
+              </ShimmerButton>
+            </Link>
+          </div>
+
+          <div className="xl:flex items-center gap-48">
+
+            <div className="flex flex-col items-center pt-24 ">
+              <HyperText
+                className="text-4xl font-bold text-black dark:text-white md:text-7xl xl:text-8xl"
+                text="Salões"
+              />
+              <HyperText
+                className="text-4xl font-bold text-black dark:text-white md:text-7xl xl:text-8xl"
+                text="E"
+              />
+
+              <HyperText
+                className="text-4xl font-bold text-black dark:text-white md:text-7xl xl:text-8xl"
+                text="Barbearias"
+              />
+            </div>
+
+            <div className="px-4 pt-24">
+              <Iphone15Pro className="size-full" src="/cell.png" />
+            </div>
+          </div>
+          {/* <Safari className="pt-24" url="Sua-barbearia.com" src="mainBarber.png" /> */}
         </div>
       </motion.div>
-    </AuroraBackground>
-  )
+    </AnimatePresence>
+
+  );
 }

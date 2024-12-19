@@ -91,7 +91,7 @@ export default function Home() {
                 className="pt-3 text-xl sm:text-2xl md:text-4xl xl:text-6xl"
               // duration={1}
               />
-              <Safari className="pt-10 px-4 w-full max-w-xl h-[fit-content] sm:max-w-full xl:px-16" url="Sua-barbearia.com" src="mainBarber.png" />
+              <Safari className="pt-10 px-4 w-full max-w-xl min-h-0 h-auto sm:max-w-full xl:px-16" url="Sua-barbearia.com" src="mainBarber.png" />
               <div className="px-4 py-10 w-full max-w-xl sm:max-w-full xl:px-16">
                 <TextGenerateEffect
                   words={"Não oferecemos apenas um serviço de agendamentos, mas sim uma plataforma personalizada e única feita sob medida para cada cliente."}

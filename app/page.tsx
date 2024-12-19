@@ -78,11 +78,19 @@ export default function Home() {
             <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
-              transition={{ duration: 1 }}
+              transition={{ duration: 3 }}
               className="pt-24"
             >
-              <GradualSpacing text="Gerencie seu negócio" className="text-2xl font-bold sm:text-4xl md:text-6xl lg:text-7xl xl:text-8xl " />
-              <GradualSpacing text="De forma simples." className="pt-3 text-xl sm:text-2xl md:text-4xl xl:text-6xl" />
+              <GradualSpacing
+                text="Gerencie seu negócio"
+                className="text-2xl font-bold sm:text-4xl md:text-6xl lg:text-7xl xl:text-8xl"
+                // duration={1}
+              />
+              <GradualSpacing
+                text="De forma simples."
+                className="pt-3 text-xl sm:text-2xl md:text-4xl xl:text-6xl"
+                // duration={1}
+              />
               <Safari className="pt-10 px-4 w-full max-w-xl h-fit sm:max-w-full xl:px-16" url="Sua-barbearia.com" src="mainBarber.png" />
               <div className="px-4 py-10 w-full max-w-xl sm:max-w-full xl:px-16">
                 <TextGenerateEffect
